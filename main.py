@@ -28,7 +28,6 @@ class NeuralNetwork(nn.Module):
         return logits
 
 
-# st.title('_Image Caption Generator_')
 html_temp = """
     <div style="background:#522B72 ;padding:10px">
     <h2 style="color:white;text-align:center;"> Classify FashionMNIST image</h2>
@@ -61,7 +60,7 @@ if image is not None:
         "Ankle boot",
     ]
     model = NeuralNetwork().to(device)
-    model.load_state_dict(torch.load(r"C:\Users\Manan Mehta\FashionMNISTmodel.pth", map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load(r"FashionMNISTmodel.pth", map_location=torch.device('cpu')))
     model.eval()
     with torch.no_grad():
         pred = model(image)
